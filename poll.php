@@ -1,6 +1,7 @@
 <?php
+
 // open a file based on the voter's name
-$filename = $_POST['m_name'] . ".txt";
+$filename = $_POST['m_name'] . "_" . date("Ymd") . ".txt";
 $file = fopen($filename, "w");
 
 // DEBUG
@@ -19,4 +20,8 @@ fwrite($file, $_POST['m_ursula'] . "\n");
 // close file
 fclose($file);
 // good boy :)
+
+// redirect after submitting
+header("Location: submitted.html");
+
 ?>
